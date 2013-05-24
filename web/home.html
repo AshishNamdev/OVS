@@ -1,0 +1,60 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript">
+            function show()
+            {
+                var x=document.getElementById("uid").value;
+                var y=document.getElementById("pass").value;
+                
+                if(x.length==0||y.length==0)
+                    {
+                        alert("Cann't be empty");
+                    }
+            }
+            
+            
+        </script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form method="post" action="LoginServlet">
+            <fieldset>
+                <legend>Login</legend>
+                <table align="right">
+                    <tr>
+                        <td>
+                            Id
+                        </td>
+                        <td>
+                            <input type="text" name="id" id="uid">
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            <input type="password" name="pass" id="pass" onsubmit="show()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                    <center>
+                        <input type="submit" value="Log in">
+                    </center>
+                    
+                        </td>
+                    </tr>
+                </table>
+            
+        </form>
+        
+    </body>
+</html>

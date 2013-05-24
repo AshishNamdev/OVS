@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <context-param>
+        <description>The Connection with Databse Usin type 4  Driver of oracle</description>
+        <param-name>Driver</param-name>
+        <param-value>jdbc:oracle:thin:@192.168.1.2:1521:XE</param-value>
+    </context-param>
+    <context-param>
+        <description>The owner of Database</description>
+        <param-name>Db_User</param-name>
+        <param-value>Ashish</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Db_Pwd</param-name>
+        <param-value>ashish</param-value>
+    </context-param>
+    <context-param>
+        <description>The Driver Class for Database connection</description>
+        <param-name>DriverClass</param-name>
+        <param-value>oracle.jdbc.OracleDriver</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <servlet-class>RegistrationServlet</servlet-class>
+        <init-param>
+            <description>The Insert Query to insert recoprd into The Database</description>
+            <param-name>Qry</param-name>
+            <param-value>Insert into Voter_Details(Voter_Id,F_Name,M_Name,L_Name,Add_1,Add_2,Pin,State,Country,Password,Contact_No,Email_Id,Gendre,DOB) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>getParamServlet</servlet-name>
+        <servlet-class>getParamServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidationServlet</servlet-name>
+        <servlet-class>ValidationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ignoreVoteServlet</servlet-name>
+        <servlet-class>ignoreVoteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RidirectionServlet</servlet-name>
+        <servlet-class>RidirectionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Helloservlet</servlet-name>
+        <servlet-class>Helloservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <url-pattern>/RegistrationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getParamServlet</servlet-name>
+        <url-pattern>/getParamServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidationServlet</servlet-name>
+        <url-pattern>/ValidationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ignoreVoteServlet</servlet-name>
+        <url-pattern>/ignoreVoteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RidirectionServlet</servlet-name>
+        <url-pattern>/RidirectionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Helloservlet</servlet-name>
+        <url-pattern>/Helloservlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
